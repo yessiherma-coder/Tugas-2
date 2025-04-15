@@ -1,0 +1,36 @@
+# Inisialisasi list untuk menyimpan transaksi
+transaksi_penjualan = []
+
+# Fungsi untuk menambah transaksi
+def tambah_transaksi():
+    id_transaksi = input("Masukkan ID Transaksi: ")
+    id_produk = input("Masukkan ID Produk: ")
+    jumlah = int(input("Masukkan Jumlah Produk: "))
+    transaksi = (id_transaksi, id_produk, jumlah)
+    transaksi_penjualan.append(transaksi)
+    print("Transaksi berhasil ditambahkan!\n")
+
+# Fungsi untuk menampilkan semua transaksi
+def tampilkan_transaksi():
+    print("\nDaftar Transaksi Penjualan:")
+    for trx in transaksi_penjualan:
+        print(f"ID Transaksi: {trx[0]}, ID Produk: {trx[1]}, Jumlah: {trx[2]}")
+    print()
+
+# Program utama
+while True:
+    print("=== MENU TRANSAKSI PENJUALAN ===")
+    print("1. Tambah Transaksi")
+    print("2. Tampilkan Semua Transaksi")
+    print("3. Keluar")
+    pilihan = input("Pilih menu (1/2/3): ")
+
+    if pilihan == "1":
+        tambah_transaksi()
+    elif pilihan == "2":
+        tampilkan_transaksi()
+    elif pilihan == "3":
+        print("Program selesai. Terima kasih!")
+        break
+    else:
+        print("Pilihan tidak valid. Coba lagi.\n")
